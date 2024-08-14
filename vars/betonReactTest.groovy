@@ -5,7 +5,7 @@ def call(Map params) {
             stage('Example') {
                 steps {
                 sh "echo Hello world"
-                dockerImage = docker.build("test")
+                docker.build("test")
                 }
             }
         }
