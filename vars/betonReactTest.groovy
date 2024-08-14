@@ -22,10 +22,7 @@
 
 def call(Map params) {
 pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            agent {
+    agent {
                 docker {
                     image 'dind:stable'
                     // Run the container on the node specified at the
@@ -34,6 +31,9 @@ pipeline {
                     reuseNode true
                 }
             }
+    stages {
+        stage('Build') {
+            
             steps {
                 sh 'docker --version'
             }
