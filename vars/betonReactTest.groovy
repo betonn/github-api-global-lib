@@ -1,4 +1,4 @@
-@Library("beton-shared") _
+
 pipeline{
     agent('any')
     stages{
