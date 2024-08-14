@@ -1,6 +1,6 @@
 def call(Map params) {
     pipeline{
-        agent('	test1node')
+        agent{ label 'test1node'}
         stages{
             stage('Example') {
                 steps {
