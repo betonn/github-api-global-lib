@@ -5,6 +5,7 @@ def call(Map params) {
             stage('Example') {
                 steps {
                 sh "echo Hello world"
+                sh "docker ps "
                 }
             }
         }
