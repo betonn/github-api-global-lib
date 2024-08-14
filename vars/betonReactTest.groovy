@@ -6,7 +6,7 @@ def call(Map params) {
                 steps {
                     script {
                         def dockerImage = docker.build('betonnecmi/react_test_app:latest', '.')
-                        docker.withRegistry('https://registry.hub.docker.com') {
+                        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                             dockerImage.push('latest')
                         }
                     }
