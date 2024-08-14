@@ -5,7 +5,7 @@ def call(Map params) {
             stage('Build') {
                 steps {
                     script {
-                        dockerImage = docker.build("reacttestapp, .")
+                        def dockerImage = docker.build("react_test_app", ".")
                     }
                 }
             }
