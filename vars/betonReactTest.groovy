@@ -5,7 +5,11 @@ def call(Map params) {
             stage('Build') {
                 steps {
                     script {
-                        def dockerImage = docker.build("react_test_app", ".")
+                        def dockerImage = docker.build('react_test_app', '.')
+                        docker.renameImage(dockerImage.id, 'betonnecmi/react_test_app:latest')
+                        docker.withRegistry('https://registry.hub.docker.com') {
+                            dockerImage.push('latest')
+                        }
                     }
                 }
             }
